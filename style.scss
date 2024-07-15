@@ -259,3 +259,41 @@ h1 {
         font-size: 50px;
     }
 }
+
+.skills-bar {
+    border: 1px solid #cccccc;
+    border-radius: 10px;
+    padding-inline: 14px;
+
+    width: calc(100% - 80px);
+    height: auto;
+
+    cursor: pointer;
+    background-color: #ffffff;
+    transition: all 0.3s ease-in-out;
+
+    position: relative;
+    flex: 1 1 calc(230px - 80px);
+    transform: translateX(80px);
+}
+
+.skill-name {
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: -35px;
+    line-height: 1.2;
+}
+
+.skill-icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: auto;
+}
+
+.js {
+    margin-left: 14px
+}
+
+.js-text {
+    margin-left: 19px;
+}
