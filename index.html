@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <title>Chadee</title>
+        <meta name="description" content="Information about me">
+        <meta name="image" content="https://raw.githubusercontent.com/okineadev/okienadev-website/main/images/preview.png" />
+
+        <!-- Open Graph-->
+        <meta property="og:type" content="website">
+        <meta property="og:image" content="https://raw.githubusercontent.com/okineadev/okienadev-website/main/images/preview.png">
+        <meta property="og:url" content="chadee.is-a.dev" />
+		<meta property="og:title" content="Chadee website" />
+        <meta
+			property="og:description"
+			content="Information about me"
+		/>
+        <meta property="og:image:alt" content="Image" />
+
+        <link rel="stylesheet" href="/style.scss" />
+
+        <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-0TM7HRVX06"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-0TM7HRVX06');
+        </script>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const projectTabs = document.querySelectorAll('.project-tab');
+                projectTabs.forEach(tab => {
+                    tab.addEventListener('click', function () {
+                        const link = tab.getAttribute('repo-link');
+                        if (link) {
+                            window.open(link, '_blank')
+                        }
+                    });
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <img class="bubbles" src="images/bubbles.webp" alt="Bubbles">
+        <div class="profile-card">
+            <div class="info">
+                <h1 class="name">Chadee</h1>
+                <div class="meta-info">
+                    <span class="meta-item">
+                        <img class="icon" src="icons/location.svg" alt="Location"/>
+                        <img class="emoji" src="emojis/ua-flag.webp" alt="UA" />
+                        <span>Ukraine</span>
+                    </span>
+                    <span class="meta-item">
+                        <img class="icon" src="icons/github.svg" alt="GitHub"/>
+                        <a href="https://github.com/chadeeeee">
+                            <span>chadeeeee<span>
+                        </a>
+                    </span>
+                </div>
+                <div class="description">
+                    <p>
+                        Hello <img class="emoji" src="emojis/hello.webp" alt="Waving Hand" />, my name is <b>Dmytro</b> and I am a developer. I write mainly in <b>Python</b>
+                    </p>
+                    <p>I also have experience with <b>SQL</b> and understand how to work with databases</p>
+                    <p>If I have free time I'm cycling, you can also check my <a href="https://www.strava.com/athletes/51513606"><b>Strava</b></a></p>                </div>
+            </div>
+            <div class="avatar">
+                <img src="images/avatar.webp" alt="Avatar" />
+            </div>
+        </div>
+
+        <h1 class="center">My projects</h1>
+
+        <p>List of my best projects</p>
+
+        <div class="projects">
+            <div class="project-tab" repo-link="https://github.com/chadeeeee/chadee-userbot">
+                <div class="project-header">
+                    <div class="repo">
+                        <img class="icon" src="icons/repo.svg" alt="Repo" />
+                        <span class="name">chadee-userbot</span>
+                    </div>
+
+                    <img src="icons/open.svg" alt="Open">
+                </div>
+
+                <div class="description">
+                    <p>🤖 Simple userbot which makes Telegram using <b>easier</b> and more <b>interesting</b>!</p>
+                </div>
+            </div>
+            <div class="project-tab" repo-link="https://github.com/chadeeeee/ReminderBot">
+                <div class="project-header">
+                    <div class="repo">
+                        <img class="icon" src="icons/repo.svg" alt="Repo" />
+                        <span class="name">reminder-bot</span>
+                    </div>
+
+                    <img src="icons/open.svg" alt="Open">
+                </div>
+                <div class="description">
+                    <p>🔔 Telegram bot which helps you don't forget for your plans!</p>
+                </div>
+            </div>
+            <div class="project-tab" repo-link="https://github.com/chadeeeee/Rombi">
+                <div class="project-header">
+                    <div class="repo">
+                        <img class="icon" src="icons/repo.svg" alt="Repo" />
+                        <span class="name">rombi</span>
+                    </div>
+
+                    <img src="icons/open.svg" alt="Open">
+                </div>
+                <div class="description">
+                    <p>👮‍♂️ Simple Telegram bot moderator which helps you to ban and mute people</p>
+                </div>
+            </div>
+
+            <div class="project-tab" repo-link="https://github.com/chadeeeee/MasterClicker">
+                <div class="project-header">
+                    <div class="repo">
+                        <img class="icon" src="icons/repo.svg" alt="Repo" />
+                        <span class="name">master-clicker</span>
+                    </div>
+
+                    <img src="icons/open.svg" alt="Open">
+                </div>
+                <div class="description">
+                    <p>⚡️ Autoclicker for Windows that clicks many times without your help!</p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
