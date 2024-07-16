@@ -1,4 +1,10 @@
 {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "commentTranslate.targetLanguage": "en"
+    "commentTranslate.targetLanguage": "en",
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "[scss]": {
+        "editor.defaultFormatter": "vscode.css-language-features"
+    }
 }

@@ -4,6 +4,7 @@
 * {
     box-sizing: border-box;
 }
+
 // Body styles
 body {
     padding-inline: 20px;
@@ -171,6 +172,7 @@ h1 {
                 transition: opacity 0.3s ease-in-out;
             }
         }
+
         .repo {
             display: inline-flex;
             align-items: stretch;
@@ -217,7 +219,7 @@ h1 {
             left: 0;
 
             background: linear-gradient(-45deg, #e81cff, #40c9ff);
-            transform: translateZ(0) scale(0.9);
+            transform: translateZ(5) scale(1.5);
             filter: blur(20px);
 
             opacity: 0;
@@ -248,6 +250,7 @@ h1 {
 }
 
 @media (max-width: 890px) {
+
     .bubbles,
     .profile-card .avatar {
         display: none;
@@ -260,40 +263,127 @@ h1 {
     }
 }
 
-.skills-bar {
+.container {
+    position: relative;
+    max-width: 1900px; /* Increased from 500px */
+    width: 100%;
+    background: #fff;
+    margin: 0 auto; /* Changed from '0 15px' to center the container */
+    padding: 20px 0px; /* Increased padding */
+    border-radius: 7px;
+}
+
+.container .skill-box {
+    width: 100%;
+    margin: 30px 0; /* Increased from 25px */
+}
+
+.skill-box .title {
+    display: block;
+    font-size: 16px; /* Increased from 14px */
+    font-weight: 600;
+    color: #333;
+}
+
+
+.skill-box .skill-bar {
+    height: 10px; /* Increased from 8px */
+    width: 100%;
+    border-radius: 6px;
+    margin-top: 8px; /* Increased from 6px */
+    background: rgba(0,0,0,0.1);
+}
+
+
+.skill-bar .skill-per {
+    position: relative;
+    display: block;
+    height: 100%;
+    border-radius: 6px;
+    background: linear-gradient(-45deg, #e81cff, #40c9ff);
+    animation: progress 0.4s ease-in-out forwards;
+    opacity: 0;
+}
+
+.skill-per.python{
+    width: 70%;
+    animation-delay: 0.3s;
+}
+
+.skill-per.javascript{
+    width: 10%;
+    animation-delay: 0.1s;
+}
+
+
+.skill-per.django{
+    width: 45%;
+    animation-delay: 0.2s;
+}
+
+
+.skill-per.mysql{
+    width: 50%;
+    animation-delay: 0.3s;
+}
+
+
+@keyframes progress {
+    0%{
+        width: 0;
+        opacity: 1;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+
+.skill-per .tooltip {
+    position: absolute;
+    right: -14px;
+    top: -35px; /* Adjusted to accommodate larger skill bar */
+    font-size: 11px; /* Increased from 9px */
+    font-weight: 500;
+    color: #fff;
+    padding: 3px 8px; /* Increased padding */
+    border-radius: 3px;
     border: 1px solid #cccccc;
     border-radius: 10px;
-    padding-inline: 14px;
-
-    width: calc(100% - 80px);
     height: auto;
-
-    cursor: pointer;
-    background-color: #ffffff;
-    transition: all 0.3s ease-in-out;
-
-    position: relative;
-    flex: 1 1 calc(230px - 80px);
-    transform: translateX(80px);
+    background-color: #b68e8e;
+    z-index: 1;
 }
 
-.skill-name {
-    display: inline-block;
-    vertical-align: middle;
-    margin-bottom: -35px;
-    line-height: 1.2;
+
+.tooltip::before {
+    position: absolute;
+    left: 50%;
+    bottom: -4px; /* Adjusted for larger tooltip */
+    height: 12px; /* Increased from 10px */
+    width: 12px; /* Increased from 10px */
+    z-index: -1;
+    background: linear-gradient(-45deg, #e81cff, #40c9ff);
+    transform: translateX(-50%) rotate(45deg);
 }
 
-.skill-icon {
-    display: inline-block;
-    vertical-align: middle;
-    margin-bottom: auto;
-}
 
-.js {
-    margin-left: 14px
-}
+// * {box-sizing:border-box}
 
-.js-text {
-    margin-left: 19px;
-}
+// /* Container for skill bars */
+// .container {
+//   width: 100%; /* Full width */
+//   background-color: #ddd; /* Grey background */
+// }
+
+// .skills {
+//   text-align: right; /* Right-align text */
+//   padding-top: 10px; /* Add top padding */
+//   padding-bottom: 10px; /* Add bottom padding */
+//   color: white; /* White text color */
+// }
+
+// .html {width: 100%; background-color: #04AA6D;} /* Green */
+// .css {width: 80%; background-color: #2196F3;} /* Blue */
+// .js {width: 65%; background-color: #f44336;} /* Red */
+// .php {width: 60%; background-color: #808080;} /* Dark Grey */
