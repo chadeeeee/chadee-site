@@ -368,22 +368,56 @@ h1 {
 }
 
 
-// * {box-sizing:border-box}
+.tg {
+    border-radius: 15px;
+    background-color: white;
+    font-family: "Raleway", sans-serif;
+    font-size: 30px;
+    font-weight: 550;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    margin-bottom: 50px;
+    position: relative;
+    z-index: 1;
+    margin-right: auto; 
+}
 
-// /* Container for skill bars */
-// .container {
-//   width: 100%; /* Full width */
-//   background-color: #ddd; /* Grey background */
-// }
+.gmail {
+    margin-left: 40px;
+}
 
-// .skills {
-//   text-align: right; /* Right-align text */
-//   padding-top: 10px; /* Add top padding */
-//   padding-bottom: 10px; /* Add bottom padding */
-//   color: white; /* White text color */
-// }
+.tg::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    bottom: -5px;
+    left: -5px;
+    background: linear-gradient(-45deg, #e81cff, #40c9ff);
+    z-index: -1;
+    filter: blur(20px);
+    border-radius: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
 
-// .html {width: 100%; background-color: #04AA6D;} /* Green */
-// .css {width: 80%; background-color: #2196F3;} /* Blue */
-// .js {width: 65%; background-color: #f44336;} /* Red */
-// .php {width: 60%; background-color: #808080;} /* Dark Grey */
+.tg:hover {
+    transform: scale(1.05);
+}
+
+.tg:hover::before {
+    opacity: 0.7;
+}
+
+.tg::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: white;
+    z-index: -1;
+    border-radius: 15px;
+}
+
