@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@160..700&display=swap');
+
+:root {
+  font-family: 'Raleway', sans-serif;
+  /* line-height: 1.5; */
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: black;
+  background-color: white;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  padding-inline: 20px;
+  /* max-width: 70rem; */
+  margin-block: 0;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	font-family: 'Raleway', sans-serif;
+}
+
+p,
+a,
+span {
+	font-family: 'Readex Pro', sans-serif;
+}
+
+a {
+	color: var(--link-color);
+	white-space: nowrap;
+
+	&:hover {
+		color: var(--link-hover-color);
+	}
+
+	@media (prefers-reduced-motion: no-preference) {
+		transition: color 0.15s ease-in-out;
+	}
+}

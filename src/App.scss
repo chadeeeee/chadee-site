@@ -1,0 +1,379 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@160..700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+/* Додайте цей блок */
+html {
+  background-image: url('../src/assets/images/noise.svg');
+  background-repeat: repeat;
+  background-size: 300px 300px;
+  min-height: 100vh;
+}
+
+body {
+  padding-inline: 20px;
+  max-width: 70rem;
+  margin: 0 auto;
+  min-height: 100vh;
+  font-family: 'Readex Pro', sans-serif;
+}
+
+// Font family styles
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Raleway', sans-serif;
+}
+
+p,
+span {
+  font-family: 'Readex Pro', sans-serif;
+}
+
+// Paragraph styles
+p {
+  font-size: 20px;
+}
+
+// Bold text styles
+b {
+  font-weight: 500;
+}
+
+a {
+  color: #565454;
+}
+
+// Emoji styles
+.emoji {
+  width: 18px;
+  margin-right: 2px;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+.center {
+  text-align: center;
+}
+
+.bubbles {
+  position: absolute;
+  z-index: -9999;
+  right: calc(((100% - 70rem) / 2) - 150px);
+
+  object-position: right;
+  width: 700px;
+}
+
+// Profile card styles
+.profile-card {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 0;
+
+  flex-wrap: nowrap;
+
+  // Info section styles
+  .info {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+
+    .name {
+      font-size: 70px;
+      max-width: 100%;
+      // font-size: clamp(50px, 5vw, 70px);
+      margin: 0;
+    }
+
+    // Meta info styles
+    .meta-info {
+      color: #757575;
+      display: flex;
+      flex-wrap: wrap;
+
+      margin-left: 6px;
+
+      // Meta item styles
+      .meta-item {
+        display: flex;
+        align-items: center;
+        margin-right: 10px;
+
+        .icon {
+          margin-right: 3px;
+        }
+      }
+    }
+
+    // Description section styles
+    .description {
+      padding-block: 10px;
+
+      p {
+        margin: 10px 0;
+      }
+    }
+  }
+
+  // Avatar styles
+  .avatar {
+    width: 350px;
+    border-radius: 50%; // Makes the image circular
+    overflow: hidden; // Hides parts of the image outside the circular area
+
+    display: flex;
+    align-items: center;
+
+    justify-content: center;
+    box-shadow: 0px 0px 20px 10px #0000002e;
+
+    img[alt='Avatar'] {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  transition: transform 0.3s ease-in-out;
+  margin-bottom: 10px;
+
+  .project-tab {
+    border: 1px solid #cccccc;
+    border-radius: 10px;
+    padding-inline: 14px;
+
+    width: -webkit-fill-available;
+    height: auto;
+
+    cursor: pointer;
+    background-color: #ffffff;
+    transition: all 0.3s ease-in-out;
+
+    position: relative;
+    flex: 1 1 230px;
+
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: stretch;
+
+      margin: 14px 0 0;
+
+      img[alt='Open'] {
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+      }
+    }
+
+    .repo {
+      display: inline-flex;
+      align-items: stretch;
+      flex-wrap: nowrap;
+
+      flex-direction: row;
+
+      .icon {
+        margin-right: 5px;
+      }
+
+      .name {
+        font-size: 17px;
+      }
+    }
+
+    .description p {
+      font-size: 12px;
+      color: #757575;
+      margin-top: 4px;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+
+      &::before {
+        opacity: 0.3;
+      }
+    }
+
+    // &:hover::before {
+    //     opacity: .3;
+    // }
+
+    &::before {
+      content: '';
+      z-index: -9999;
+      position: absolute;
+
+      top: 0;
+      bottom: 0;
+
+      right: 0;
+      left: 0;
+
+      background: linear-gradient(-45deg, #e81cff, #40c9ff);
+      transform: translateZ(5) scale(1.5);
+      filter: blur(20px);
+
+      opacity: 0;
+      transition: opacity 0.3s;
+
+      border-radius: inherit;
+    }
+
+    &::after {
+      content: '';
+      z-index: -1;
+      position: absolute;
+
+      top: 0;
+      bottom: 0;
+
+      right: 0;
+      left: 0;
+
+      background: inherit;
+      border-radius: inherit;
+    }
+
+    &:hover .project-header img[alt='Open'] {
+      opacity: 1;
+    }
+  }
+}
+
+@media (max-width: 890px) {
+  .bubbles,
+  .profile-card .avatar {
+    display: none;
+  }
+}
+
+@media (max-width: 550px) {
+  .profile-card .info .name {
+    font-size: 50px;
+  }
+}
+
+.skills-container {
+  padding: 2rem;
+
+  h2 {
+    margin-bottom: 1rem;
+  }
+}
+
+.skills-grid {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+
+.skill-icon {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.skills-sections {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.skills-section {
+  flex: 1;
+  max-width: 400px;
+  text-align: center;
+
+  h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+  }
+}
+
+.skills-grid {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+
+.contacts {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 15px;
+  justify-content: center;
+
+  a {
+    text-decoration: none;
+
+    .social {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+
+      &:hover {
+        .social-icon {
+          transform: scale(1.1) translateY(-5px);
+        }
+
+        span {
+          color: #000;
+        }
+      }
+
+      .social-icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        background-color: #444;
+        border-radius: 20px;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+        transition: transform 0.2s ease-in-out;
+
+        .social-image {
+          width: 20px;
+          height: 20px;
+        }
+      }
+
+      span {
+        width: min-content;
+        font-size: 14px;
+        margin-top: 5px;
+        padding-inline: 4px;
+        color: #ccc;
+        text-align: center;
+        transition: color 0.2s ease-in-out;
+      }
+    }
+  }
+}
