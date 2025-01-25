@@ -19,7 +19,7 @@ function About() {
             <span className="meta-item">
             <img className="emoji" style={{ width: '18px' }} src={location} alt="Location" />
               <img className="emoji" style={{ width: '18px', marginRight: '2px'}} src={uaFlag} alt="UA" />
-              <span style={{ color: '#47a5f4' }}>Ukraine</span>
+              <span style={{ color: 'black' }}>Ukraine</span>
             </span>
             <span className="meta-item">
               <img className="icon" src={githubLogo} alt="GitHub" />

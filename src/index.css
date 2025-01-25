@@ -3,50 +3,68 @@
 
 :root {
   font-family: 'Raleway', sans-serif;
-  /* line-height: 1.5; */
   font-weight: 400;
-
-  color-scheme: light dark;
   color: black;
   background-color: white;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
+  /* Кастомні властивості */
+  --link-color: #565454;
+  --link-hover-color: #333;
+  --box-shadow: 0px 0px 20px 10px #0000002e;
+  --project-tab-description-text-color: #757575;
+  --socials-caption-hover-color: #333;
+}
 
+html {
+  background-image: url('../src/assets/images/noise.svg');
+  background-repeat: repeat;
+  background-size: 300px 300px;
+  min-height: 100vh;
+}
+
+body {
   padding-inline: 20px;
-  /* max-width: 70rem; */
-  margin-block: 0;
-
-  margin-left: auto;
-  margin-right: auto;
-
-  height: 100%;
+  max-width: 90rem;
+  margin: 0 auto;
+  min-height: 100vh;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
-h1,
-h2,
-h3,
-h4 {
-	font-family: 'Raleway', sans-serif;
+/* Базові стилі типографіки */
+h1, h2, h3, h4 {
+  font-family: 'Raleway', sans-serif;
 }
 
-p,
-a,
-span {
-	font-family: 'Readex Pro', sans-serif;
+p, span {
+  font-family: 'Readex Pro', sans-serif;
 }
 
 a {
-	color: var(--link-color);
-	white-space: nowrap;
+  color: var(--link-color);
+  white-space: nowrap;
+  transition: color 0.15s ease-in-out;
+}
 
-	&:hover {
-		color: var(--link-hover-color);
-	}
+a:hover {
+  color: var(--link-hover-color);
+}
 
-	@media (prefers-reduced-motion: no-preference) {
-		transition: color 0.15s ease-in-out;
-	}
+/* Глобальні утиліти */
+.center {
+  text-align: center;
+}
+
+.bubbles {
+  position: absolute;
+  z-index: -9999;
+  right: calc(((100% - 90rem) / 2) - 150px);
+  object-position: right;
+  width: 700px;
 }

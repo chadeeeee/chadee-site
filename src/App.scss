@@ -15,10 +15,14 @@ html {
 
 body {
   padding-inline: 20px;
-  max-width: 70rem;
+  max-width: 90rem;
   margin: 0 auto;
   min-height: 100vh;
   font-family: 'Readex Pro', sans-serif;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 // Font family styles
@@ -65,7 +69,7 @@ h1 {
 .bubbles {
   position: absolute;
   z-index: -9999;
-  right: calc(((100% - 70rem) / 2) - 150px);
+  right: calc(((100% - 90rem) / 2) - 150px);
 
   object-position: right;
   width: 700px;
@@ -150,7 +154,7 @@ h1 {
   margin-bottom: 10px;
 
   .project-tab {
-    border: 1px solid #cccccc;
+    border: 1px solid #f1f1f1;
     border-radius: 10px;
     padding-inline: 14px;
 
@@ -329,7 +333,7 @@ h1 {
   gap: 15px;
   justify-content: center;
 
-  a {
+  .social-link {
     text-decoration: none;
 
     .social {
@@ -344,36 +348,153 @@ h1 {
         }
 
         span {
-          color: #000;
+          color: var(--socials-caption-hover-color);
         }
       }
 
       .social-icon {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 40px;
-        height: 40px;
-        background-color: #444;
+        width: 70px;
+        height: 70px;
+        background: white;
         border-radius: 20px;
-        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
-        transition: transform 0.2s ease-in-out;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: var(--box-shadow);
 
         .social-image {
-          width: 20px;
-          height: 20px;
+          margin: 0;
+          display: block;
+        }
+
+        @media (prefers-reduced-motion: no-preference) {
+          transition: transform 0.2s ease-in-out;
         }
       }
 
       span {
         width: min-content;
+        text-wrap: wrap;
         font-size: 14px;
         margin-top: 5px;
         padding-inline: 4px;
-        color: #ccc;
-        text-align: center;
-        transition: color 0.2s ease-in-out;
+        color: var(--project-tab-description-text-color);
+
+        @media (prefers-reduced-motion: no-preference) {
+          transition: color 0.2s ease-in-out;
+        }
       }
     }
+  }
+}
+
+.spark {
+  position: absolute;
+  width: 30px;
+  height: 8px;
+  border-radius: 3px;
+  backdrop-filter: invert(100%);
+  transform: none;
+  z-index: 9999;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes showGradient {
+  0% {
+    opacity: 0.1;
+    left: -400px;
+  }
+  100% {
+    opacity: 0.4;
+    left: -385px;
+  }
+}
+
+@keyframes blue {
+  0% {
+    top: 100px;
+    left: 50px;
+    transform: scale(1);
+  }
+  30% {
+    top: 120px;
+    left: 100px;
+    transform: scale(1.1);
+  }
+  60% {
+    top: 80px;
+    left: 0;
+    transform: scale(1.2);
+  }
+  100% {
+    top: 100px;
+    left: 50px;
+    transform: scale(1);
+  }
+}
+
+@keyframes cyan {
+  0% {
+    top: 30px;
+    right: -20px;
+    transform: scale(1.1);
+  }
+  30% {
+    top: 50px;
+    right: -20px;
+    transform: scale(1);
+  }
+  60% {
+    top: 40px;
+    right: 40px;
+    transform: scale(1);
+  }
+  100% {
+    top: 30px;
+    right: -20px;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes purple {
+  0% {
+    top: 170px;
+    right: 0px;
+    transform: scale(0.9);
+  }
+  30% {
+    top: 220px;
+    right: 80px;
+    transform: scale(1.1);
+  }
+  60% {
+    top: 220px;
+    right: -80px;
+    transform: scale(1);
+  }
+  100% {
+    top: 170px;
+    right: 0px;
+    transform: scale(0.9);
   }
 }
