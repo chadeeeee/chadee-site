@@ -7,7 +7,6 @@ import bubblesImg from '../assets/images/bubbles.webp';
 import avatarIcon from '../assets/images/avatar.webp';
 import JS from '../assets/emojis/js.webp'
 import reactIcon from '../assets/emojis/react.webp'
-
 function About() {
   return (
     <>
@@ -19,7 +18,7 @@ function About() {
             <span className="meta-item">
             <img className="emoji" style={{ width: '18px' }} src={location} alt="Location" />
               <img className="emoji" style={{ width: '18px', marginRight: '2px'}} src={uaFlag} alt="UA" />
-              <span style={{ color: 'black' }}>Ukraine</span>
+              <span style={{ color: '#565454' }}>Ukraine</span>
             </span>
             <span className="meta-item">
               <img className="icon" src={githubLogo} alt="GitHub" />
@@ -51,5 +50,4 @@ function About() {
     </>
   );
 }
-
 export default About;

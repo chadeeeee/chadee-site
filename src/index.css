@@ -28,7 +28,7 @@ html {
 
 body {
   padding-inline: 20px;
-  max-width: 90rem;
+  max-width: 70rem;
   margin: 0 auto;
   min-height: 100vh;
   -webkit-user-select: none;
@@ -64,7 +64,7 @@ a:hover {
 .bubbles {
   position: absolute;
   z-index: -9999;
-  right: calc(((100% - 90rem) / 2) - 150px);
+  right: calc(((100% - 70rem) / 2) - 150px);
   object-position: right;
   width: 700px;
 }

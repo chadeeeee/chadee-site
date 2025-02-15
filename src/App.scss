@@ -69,7 +69,7 @@ h1 {
 .bubbles {
   position: absolute;
   z-index: -9999;
-  right: calc(((100% - 90rem) / 2) - 150px);
+  right: calc(((100% - 70rem) / 2) - 150px);
 
   object-position: right;
   width: 700px;
@@ -128,15 +128,17 @@ h1 {
 
   // Avatar styles
   .avatar {
+    position: relative;
+    z-index: 1;
     width: 350px;
-    border-radius: 50%; // Makes the image circular
-    overflow: hidden; // Hides parts of the image outside the circular area
-
+    border-radius: 50%;
+    overflow: hidden;
     display: flex;
     align-items: center;
-
     justify-content: center;
     box-shadow: 0px 0px 20px 10px #0000002e;
+    margin-left: -90px; /* Залиште це значення, якщо воно було встановлено раніше */
+    transform: translateX(-150px); /* Додайте цей рядок для зсуву вліво */
 
     img[alt='Avatar'] {
       width: 100%;
@@ -158,7 +160,7 @@ h1 {
     border-radius: 10px;
     padding-inline: 14px;
 
-    width: -webkit-fill-available;
+    /* Видаляємо width: -webkit-fill-available; */
     height: auto;
 
     cursor: pointer;
@@ -166,48 +168,77 @@ h1 {
     transition: all 0.3s ease-in-out;
 
     position: relative;
-    flex: 1 1 230px;
+    /* flex: 1 1 230px; */ /* Закоментуйте або видаліть цей рядок, щоб використовувати адаптивний flex-basis */
+
+    /* Фіксований розмір для десктопу - 4 проекти в ряд */
+    flex: 1 1 calc(25% - 10px);
+    max-width: calc(25% - 10px);
+
+    /* Адаптивність для планшетів */
+    @media (max-width: 1024px) {
+      flex: 1 1 calc(50% - 10px);
+      max-width: calc(50% - 10px);
+    }
+
+    /* Адаптивність для мобільних */
+    @media (max-width: 480px) {
+      flex: 1 1 100%;
+      max-width: 100%;
+    }
+
 
     .project-header {
       display: flex;
       justify-content: space-between;
-      align-items: stretch;
+      align-items: stretch; /* Змінено на stretch, щоб іконка Open вирівнювалась по висоті */
 
       margin: 14px 0 0;
 
       img[alt='Open'] {
         opacity: 0;
         transition: opacity 0.3s ease-in-out;
+
+        @media (max-width: 768px) { /* Показувати іконку Open на мобільних та планшетах */
+          opacity: 1;
+        }
       }
     }
 
     .repo {
       display: inline-flex;
-      align-items: stretch;
+      align-items: stretch; /* Змінено на stretch, щоб іконки і текст вирівнювались по висоті */
       flex-wrap: nowrap;
 
       flex-direction: row;
 
       .icon {
         margin-right: 5px;
+        width: 20px; /* Зменшено розмір іконки */
+        height: 20px; /* Зменшено розмір іконки */
       }
 
       .name {
-        font-size: 17px;
+        font-size: 16px; /* Зменшено розмір шрифту */
       }
     }
 
     .description p {
-      font-size: 12px;
+      font-size: 11px; /* Зменшено розмір шрифту */
       color: #757575;
       margin-top: 4px;
     }
 
-    &:hover {
-      transform: scale(1.05);
+    @media (hover: hover) {
+      &:hover {
+        transform: scale(1.05);
 
-      &::before {
-        opacity: 0.3;
+        &::before {
+          opacity: 0.3;
+        }
+
+        .project-header img[alt='Open'] {
+          opacity: 1;
+        }
       }
     }
 
@@ -250,10 +281,6 @@ h1 {
       background: inherit;
       border-radius: inherit;
     }
-
-    &:hover .project-header img[alt='Open'] {
-      opacity: 1;
-    }
   }
 }
 
@@ -271,36 +298,22 @@ h1 {
 }
 
 .skills-container {
-  padding: 2rem;
-
-  h2 {
-    margin-bottom: 1rem;
-  }
-}
-
-.skills-grid {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 10px;
-  margin-bottom: 1rem;
-}
-
-.skill-icon {
-  width: 40px;
-  height: 40px;
-  transition: transform 0.2s ease-in-out;
-
-  &:hover {
-    transform: scale(1.1);
+  padding: 1rem;
+  
+  @media (min-width: 768px) {
+    padding: 2rem;
   }
 }
 
 .skills-sections {
   display: flex;
+  flex-direction: column;
   gap: 2rem;
-  justify-content: center;
+  
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: center;
+  }
 }
 
 .skills-section {
@@ -313,16 +326,28 @@ h1 {
     align-items: center;
     justify-content: center;
     gap: 5px;
+    font-size: clamp(24px, 5vw, 28px);
   }
 }
 
 .skills-grid {
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
   margin-bottom: 1rem;
+}
+
+.skill-icon {
+  width: clamp(42px, 8vw, 40px);
+  height: clamp(42px, 8vw, 40px);
+  transition: transform 0.2s ease-in-out;
+
+  @media (hover: hover) {
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
 }
 
 .contacts {
